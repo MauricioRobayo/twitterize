@@ -1,0 +1,43 @@
+{
+  "name": "twitterize",
+  "version": "0.0.0-development",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "twitter",
+    "api",
+    "oauth",
+    "authorization"
+  ],
+  "author": "Mauricio Robayo <archemiro@gmail.com> (https://www.archemiro.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.2.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "semantic-release": "^15.12.5"
+  },
+  "dependencies": {},
+  "description": "Send authorized requests to the Twitter API.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archemiro/twitterization.git"
+  },
+  "bugs": {
+    "url": "https://github.com/archemiro/twitterization/issues"
+  },
+  "homepage": "https://github.com/archemiro/twitterization#readme",
+  "files": [
+    "src"
+  ]
+}
