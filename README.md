@@ -1,6 +1,6 @@
 # Twitterize
 
-[![Build Status](https://travis-ci.com/archemiro/twitterize.svg?branch=master)](https://travis-ci.com/archemiro/twitterize)
+[![Build Status](https://travis-ci.com/archemiro/twitterize.svg?branch=master)](https://travis-ci.com/archemiro/twitterize) [![Greenkeeper badge](https://badges.greenkeeper.io/archemiro/twitterize.svg)](https://greenkeeper.io/)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API. Works by generating OAuth 1.0a authorization headers for the Twitter API.
 
