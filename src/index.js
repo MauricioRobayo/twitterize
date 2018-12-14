@@ -1,6 +1,6 @@
 const qs = require("querystring");
 const https = require("https");
-const { URL } = require("url");
+const { URL, URLSearchParams } = require("url");
 const { percentEncode } = require("./authorization/helpers");
 const { authorization } = require("./authorization/authorization");
 
