@@ -4,7 +4,9 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "example:search": "run.env node examples/search-tweets.js",
+    "example:post": "run.env node examples/post-tweet.js"
   },
   "keywords": [
     "twitter",
@@ -25,6 +27,7 @@
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
+    "run.env": "^1.1.0",
     "semantic-release": "^15.12.5"
   },
   "dependencies": {},
