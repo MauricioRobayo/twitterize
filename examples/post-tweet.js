@@ -20,5 +20,5 @@ const options = {
 };
 
 request(options)
-  .then(data => console.log(data))
-  .catch(e => console.log(e));
+  .then(console.log)
+  .catch(console.log);
