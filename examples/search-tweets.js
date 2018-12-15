@@ -5,10 +5,10 @@ const request = require("../src");
 
 // https://developer.twitter.com/en/apps/
 const oauthOptions = {
-  api_key: "<YOUR API KEY>",
-  api_secret_key: "<YOUR API SECRET KEY>",
-  access_token: "<YOUR ACCESS TOKEN>",
-  access_token_secret: "<YOUR ACCESS TOKEN SECRET>"
+  api_key: process.env.TWITTER_API_KEY,
+  api_secret_key: process.env.TWITTER_API_SECRET_KEY,
+  access_token: process.env.TWITTER_ACCESS_TOKEN,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 };
 
 const options = {

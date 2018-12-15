@@ -8,6 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "search-tweets",
+      "envFile": "${workspaceFolder}/.env",
       "program": "${workspaceFolder}/examples/search-tweets.js"
     },
     {
