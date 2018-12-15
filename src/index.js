@@ -19,7 +19,11 @@ module.exports = options => {
   const url = new URL(baseUrl);
   url.search = new URLSearchParams(queryParams);
   const httpsOptions = {
+    protocol: url.protocol,
+    host: url.host,
+    hostname: url.hostname,
     method: requestMethod,
+    path: `${url.pathname}${url.search}`,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "Content-Length": Buffer.byteLength(body),
@@ -35,7 +39,7 @@ module.exports = options => {
   };
 
   return new Promise((resolve, reject) => {
-    const req = https.request(url, httpsOptions, res => {
+    const req = https.request(httpsOptions, res => {
       let data = "";
       res.on("data", _data => {
         data += _data;
