@@ -31,12 +31,12 @@
   "description": "Send authorized requests to the Twitter API.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/archemiro/twitterization.git"
+    "url": "git+https://github.com/archemiro/twitterize.git"
   },
   "bugs": {
-    "url": "https://github.com/archemiro/twitterization/issues"
+    "url": "https://github.com/archemiro/twitterize/issues"
   },
-  "homepage": "https://github.com/archemiro/twitterization#readme",
+  "homepage": "https://github.com/archemiro/twitterize#readme",
   "files": [
     "src"
   ]
