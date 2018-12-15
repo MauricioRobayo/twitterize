@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 const request = require("../src");
 
-/*  https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html
- */
+// https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html
 
 // https://developer.twitter.com/en/apps/
 const oauthOptions = {
