@@ -60,16 +60,29 @@ const credentials = {
   access_token_secret: "<YOUR ACCESS TOKEN SECRET>"
 };
 
-const options = {
-  requestMethod: "POST",
-  endpoint: "/statuses/update.json",
-  bodyParams: { status: "Hello World!" },
-  oauthOptions: credentials
-};
+## For image upload
 
-request(options)
-  .then(data => console.log(data))
-  .catch(e => console.log(e));
+image_path = path.join(__dirname, '../images/bg_googleads.jpg'),
+b64content = fs.readFileSync(image_path, { encoding: 'base64' });
+
+  const uploadOptions = {
+    requestMethod: "POST",
+    subdomain: "upload",
+    endpoint: "/media/upload.json",
+    bodyParams: {media_data: b64content}, 
+    oauthOptions
+  };
+
+request(uploadOptions)
+  .then(function(data){
+    const obj = JSON.parse(data);
+    tweetOptions.bodyParams.status = "Hello World IND SIG!",
+    tweetOptions.bodyParams.media_ids = obj.media_id_string;
+    request(tweetOptions)
+      .then(console.log)
+      .catch(console.log);
+  })
+  .catch(console.log);
 ```
 
 ## Examples
