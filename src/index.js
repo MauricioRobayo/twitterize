@@ -6,13 +6,14 @@ const { authorization } = require("./authorization/authorization");
 
 module.exports = options => {
   const {
+    subdomain = "api",
     endpoint,
     requestMethod = "GET",
     queryParams = {},
     bodyParams = {},
     oauthOptions
   } = options;
-  const baseUrl = `https://api.twitter.com/1.1${endpoint}`;
+  const baseUrl = `https://${subdomain}.twitter.com/1.1${endpoint}`;
   const body = qs.stringify(bodyParams, "&", "=", {
     encodeURIComponent: percentEncode
   });
