@@ -4,6 +4,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
+    "format": "prettier --write src/**/*.{js,ts,css,less,scss,vue,json,gql,md,yml,yaml}",
     "test": "jest --coverage",
     "example:search": "run.env node examples/search-tweets.js",
     "example:post": "run.env node examples/post-tweet.js"

@@ -27,49 +27,49 @@ Use the documented endpoints and parameters for the [twitter API](https://develo
 For example, to [search tweets](https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets.html):
 
 ```js
-const twitterize = require("twitterize");
+const twitterize = require('twitterize')
 
 const credentials = {
-  api_key: "<YOUR API KEY>",
-  api_secret_key: "<YOUR API SECRET KEY>",
-  access_token: "<YOUR ACCESS TOKEN>",
-  access_token_secret: "<YOUR ACCESS TOKEN SECRET>"
-};
+  api_key: '<YOUR API KEY>',
+  api_secret_key: '<YOUR API SECRET KEY>',
+  access_token: '<YOUR ACCESS TOKEN>',
+  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
+}
 
 const options = {
-  requestMethod: "GET",
-  endpoint: "/search/tweets.json",
-  queryParams: { q: "twitter bot" },
-  oauthOptions: credentials
-};
+  requestMethod: 'GET',
+  endpoint: '/search/tweets.json',
+  queryParams: { q: 'twitter bot' },
+  oauthOptions: credentials,
+}
 
 twitterize(options)
   .then(data => console.log(data))
-  .catch(e => console.log(e));
+  .catch(e => console.log(e))
 ```
 
 To [post tweets](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html):
 
 ```js
-const twitterize = require("twitterize");
+const twitterize = require('twitterize')
 
 const credentials = {
-  api_key: "<YOUR API KEY>",
-  api_secret_key: "<YOUR API SECRET KEY>",
-  access_token: "<YOUR ACCESS TOKEN>",
-  access_token_secret: "<YOUR ACCESS TOKEN SECRET>"
-};
+  api_key: '<YOUR API KEY>',
+  api_secret_key: '<YOUR API SECRET KEY>',
+  access_token: '<YOUR ACCESS TOKEN>',
+  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
+}
 
 const options = {
-  requestMethod: "POST",
-  endpoint: "/statuses/update.json",
-  bodyParams: { status: "Hello World!" },
-  oauthOptions: credentials
-};
+  requestMethod: 'POST',
+  endpoint: '/statuses/update.json',
+  bodyParams: { status: 'Hello World!' },
+  oauthOptions: credentials,
+}
 
 request(options)
   .then(data => console.log(data))
-  .catch(e => console.log(e));
+  .catch(e => console.log(e))
 ```
 
 ## Examples
@@ -78,6 +78,13 @@ To run the [examples](./examples) clone the repository:
 
 ```sh
 git clone https://github.com/archemiro/twitterize.git
+```
+
+Install dependencies:
+
+```
+cd twitterize
+npm install
 ```
 
 In the root directory of the repo create a `.env` file with your credentials (you can get them from your [twitter app page](https://developer.twitter.com/en/apps)):

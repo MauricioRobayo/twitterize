@@ -1,5 +1,5 @@
-const { randomString, timestamp, percentEncode } = require("./helpers");
-const { signature } = require("./modules/signature");
+const { randomString, timestamp, percentEncode } = require('./helpers')
+const { signature } = require('./modules/signature')
 
 exports.authorization = (
   requestMethod,
@@ -15,12 +15,12 @@ exports.authorization = (
   const oauthParams = {
     oauth_consumer_key: oauthOptions.api_key,
     oauth_nonce: randomString(32),
-    oauth_signature: "",
-    oauth_signature_method: "HMAC-SHA1",
+    oauth_signature: '',
+    oauth_signature_method: 'HMAC-SHA1',
     oauth_timestamp: timestamp(),
     oauth_token: oauthOptions.access_token,
-    oauth_version: "1.0"
-  };
+    oauth_version: '1.0',
+  }
 
   /*
     Generate signature
@@ -31,7 +31,7 @@ exports.authorization = (
     queryParams,
     bodyParams,
     Object.assign(oauthOptions, oauthParams)
-  );
+  )
 
   /*
     1. Append the string “OAuth ” (including the space at the end) to outputString.
@@ -47,11 +47,11 @@ exports.authorization = (
     (str, key, index, keys) => {
       // eslint-disable-next-line no-param-reassign
       str += `${percentEncode(key)}="${percentEncode(oauthParams[key])}"${
-        index < keys.length - 1 ? ", " : ""
-      }`;
-      return str;
+        index < keys.length - 1 ? ', ' : ''
+      }`
+      return str
     },
-    ""
-  )}`;
-  return outputString;
-};
+    ''
+  )}`
+  return outputString
+}
