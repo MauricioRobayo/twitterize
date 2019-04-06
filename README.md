@@ -150,6 +150,7 @@ Use the provided npm scripts:
 ```sh
 npm run example:search
 npm run example:post
+npm run example:upload
 ```
 
 ## Twittter documentation
