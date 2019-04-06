@@ -72,6 +72,54 @@ request(options)
   .catch(e => console.log(e))
 ```
 
+To [upload an image](https://developer.twitter.com/en/docs/media/upload-media/api-reference/post-media-upload.html):
+
+```js
+const fs = require('fs')
+const path = require('path')
+const request = require('../src')
+
+const credentials = {
+  api_key: '<YOUR API KEY>',
+  api_secret_key: '<YOUR API SECRET KEY>',
+  access_token: '<YOUR ACCESS TOKEN>',
+  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
+}
+
+const imagePath = path.join(__dirname, './cat.jpg')
+const b64content = fs.readFileSync(imagePath, { encoding: 'base64' })
+
+// For simple status update
+const tweetOptions = {
+  requestMethod: 'POST',
+  endpoint: '/statuses/update.json',
+  bodyParams: {},
+  oauthOptions,
+}
+
+// for  image upload
+const uploadOptions = {
+  requestMethod: 'POST',
+  subdomain: 'upload',
+  endpoint: '/media/upload.json',
+  bodyParams: { media_data: b64content },
+  oauthOptions,
+}
+
+request(uploadOptions)
+  .then(data => {
+    const obj = JSON.parse(data)
+    tweetOptions.bodyParams = {
+      status: 'Hello World IND SIG!',
+      media_ids: obj.media_id_string,
+    }
+    request(tweetOptions)
+      .then(console.log)
+      .catch(console.log)
+  })
+  .catch(console.log)
+```
+
 ## Examples
 
 To run the [examples](./examples) clone the repository:
