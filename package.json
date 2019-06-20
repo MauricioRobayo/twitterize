@@ -26,7 +26,7 @@
     "eslint-config-prettier": "^5.0.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^2.0.0",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "run.env": "^1.1.0",
