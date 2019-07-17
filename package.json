@@ -19,8 +19,8 @@
   "author": "Mauricio Robayo <archemiro@gmail.com> (https://www.archemiro.com)",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^6.0.0",
