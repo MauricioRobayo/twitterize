@@ -1,8 +1,8 @@
 # Twitterize 🔑 [![npm version](https://badge.fury.io/js/twitterize.svg)](https://www.npmjs.com/package/twitterize)
 
-[![Build Status](https://travis-ci.com/archemiro/twitterize.svg?branch=master)](https://travis-ci.com/archemiro/twitterize)
-[![codecov](https://codecov.io/gh/archemiro/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/archemiro/twitterize)
-[![Greenkeeper badge](https://badges.greenkeeper.io/archemiro/twitterize.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/MauricioRobayo/twitterize.svg?branch=master)](https://travis-ci.com/MauricioRobayo/twitterize)
+[![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
+[![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/twitterize.svg)](https://greenkeeper.io/)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API.
 
@@ -128,7 +128,7 @@ request(uploadOptions)
 To run the [examples](./examples) clone the repository:
 
 ```sh
-git clone https://github.com/archemiro/twitterize.git
+git clone https://github.com/MauricioRobayo/twitterize.git
 ```
 
 Install dependencies:
