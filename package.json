@@ -16,7 +16,7 @@
     "oauth",
     "authorization"
   ],
-  "author": "Mauricio Robayo <archemiro@gmail.com> (https://www.archemiro.com)",
+  "author": "Mauricio Robayo <rfmajo@gmail.com> (https://www.archemiro.com)",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
@@ -36,12 +36,12 @@
   "description": "Send authorized requests to the Twitter API.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/archemiro/twitterize.git"
+    "url": "git+https://github.com/MauricioRobayo/twitterize.git"
   },
   "bugs": {
-    "url": "https://github.com/archemiro/twitterize/issues"
+    "url": "https://github.com/MauricioRobayo/twitterize/issues"
   },
-  "homepage": "https://github.com/archemiro/twitterize#readme",
+  "homepage": "https://github.com/MauricioRobayo/twitterize#readme",
   "files": [
     "src"
   ]
