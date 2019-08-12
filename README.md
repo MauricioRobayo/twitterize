@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/MauricioRobayo/twitterize.svg?branch=master)](https://travis-ci.com/MauricioRobayo/twitterize)
 [![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cbaf6d86ef3f4552871744b07734ee7a)](https://www.codacy.com/app/MauricioRobayo/twitterize?utm_source=github.com&utm_medium=referral&utm_content=MauricioRobayo/twitterize&utm_campaign=Badge_Grade)
 [![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/twitterize.svg)](https://greenkeeper.io/)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API.
