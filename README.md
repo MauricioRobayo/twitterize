@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aa03d2322db549e7b30a11c5b7a4dcd4)](https://app.codacy.com/app/MauricioRobayo/twitterize?utm_source=github.com&utm_medium=referral&utm_content=MauricioRobayo/twitterize&utm_campaign=Badge_Grade_Settings)
 # Twitterize 🔑 [![npm version](https://badge.fury.io/js/twitterize.svg)](https://www.npmjs.com/package/twitterize)
 
 [![Build Status](https://travis-ci.com/MauricioRobayo/twitterize.svg?branch=master)](https://travis-ci.com/MauricioRobayo/twitterize)
