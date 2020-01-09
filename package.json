@@ -30,7 +30,7 @@
     "lint-staged": "^9.0.0",
     "prettier": "^1.15.3",
     "run.env": "^1.1.0",
-    "semantic-release": "^15.12.5"
+    "semantic-release": "^16.0.0"
   },
   "dependencies": {},
   "description": "Send authorized requests to the Twitter API.",
