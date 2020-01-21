@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cbaf6d86ef3f4552871744b07734ee7a)](https://www.codacy.com/app/MauricioRobayo/twitterize?utm_source=github.com&utm_medium=referral&utm_content=MauricioRobayo/twitterize&utm_campaign=Badge_Grade)
 [![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/twitterize.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize?ref=badge_shield)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API.
 
@@ -166,3 +167,6 @@ npm run example:upload
 ## License
 
 [MIT](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize?ref=badge_large)
