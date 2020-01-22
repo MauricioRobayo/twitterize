@@ -44,5 +44,10 @@
   "homepage": "https://github.com/MauricioRobayo/twitterize#readme",
   "files": [
     "src"
-  ]
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
 }
