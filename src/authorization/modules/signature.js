@@ -9,13 +9,13 @@ exports.signature = ({
   bodyParams,
   oauthOptions,
 }) => {
-  const baseString = signatureBaseString(
+  const baseString = signatureBaseString({
     requestMethod,
     baseUrl,
     queryParams,
     bodyParams,
     oauthOptions,
-  )
+  })
   const consumerSecret = percentEncode(oauthOptions.api_secret_key)
   const tokenSecret = percentEncode(oauthOptions.access_token_secret)
   const signingKey = `${consumerSecret}&${tokenSecret}`
