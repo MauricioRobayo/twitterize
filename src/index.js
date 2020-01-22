@@ -20,6 +20,36 @@ function buildBaseUrl(subdomain, endpoint) {
   return `https://${subdomain}.twitter.com/1.1${endpoint}`
 }
 
+function buildHttpsOptions({
+  url,
+  requestMethod,
+  body,
+  baseUrl,
+  queryParams,
+  bodyParams,
+  oauthOptions,
+}) {
+  return {
+    protocol: url.protocol,
+    host: url.host,
+    hostname: url.hostname,
+    method: requestMethod,
+    path: `${url.pathname}${url.search}`,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Length': Buffer.byteLength(body),
+      Authorization: authorization(
+        requestMethod,
+        baseUrl,
+        queryParams,
+        bodyParams,
+        oauthOptions,
+      ),
+      'cache-control': 'no-cache',
+    },
+  }
+}
+
 function request(httpsOptions, body) {
   return new Promise((resolve, reject) => {
     const req = https.request(httpsOptions, res => {
@@ -39,37 +69,25 @@ function request(httpsOptions, body) {
   })
 }
 
-module.exports = options => {
-  const {
-    subdomain = 'api',
-    endpoint,
-    requestMethod = 'GET',
-    queryParams = {},
-    bodyParams = {},
-    oauthOptions,
-  } = options
+module.exports = ({
+  subdomain = 'api',
+  endpoint,
+  requestMethod = 'GET',
+  queryParams = {},
+  bodyParams = {},
+  oauthOptions,
+}) => {
   const baseUrl = buildBaseUrl(subdomain, endpoint)
   const body = buildBody(bodyParams)
   const url = buildUrl(baseUrl, queryParams)
-  const httpsOptions = {
-    protocol: url.protocol,
-    host: url.host,
-    hostname: url.hostname,
-    method: requestMethod,
-    path: `${url.pathname}${url.search}`,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Content-Length': Buffer.byteLength(body),
-      Authorization: authorization(
-        requestMethod,
-        baseUrl,
-        queryParams,
-        bodyParams,
-        oauthOptions,
-      ),
-      'cache-control': 'no-cache',
-    },
-  }
-
+  const httpsOptions = buildHttpsOptions({
+    url,
+    requestMethod,
+    body,
+    baseUrl,
+    queryParams,
+    bodyParams,
+    oauthOptions,
+  })
   return request(httpsOptions, body)
 }
