@@ -1,6 +1,6 @@
 # Twitterize 🔑 [![npm version](https://badge.fury.io/js/twitterize.svg)](https://www.npmjs.com/package/twitterize)
 
-[![Build Status](https://github.com/MauricioRobayo/twitterize/workflows/}Test%20and%20Deploy/badge.svg)](https://github.com/MauricioRobayo/twitterize/actions)
+[![Build Status](https://github.com/MauricioRobayo/twitterize/workflows/Test%20and%20Release/badge.svg)](https://github.com/MauricioRobayo/twitterize/actions)
 [![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
 [![codebeat badge](https://codebeat.co/badges/937d95fe-2d3e-487f-a735-f90384b84566)](https://codebeat.co/projects/github-com-mauriciorobayo-twitterize-master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/twitterize.svg)](https://greenkeeper.io/)
