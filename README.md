@@ -31,49 +31,48 @@ Use the documented endpoints and parameters for the [twitter API](https://develo
 For example, to [search tweets](https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets.html):
 
 ```js
-const twitterize = require('twitterize')
+/* eslint-disable no-console */
+const twitterize = require('../src')
 
-const credentials = {
+const twit = twitterize({
   api_key: '<YOUR API KEY>',
   api_secret_key: '<YOUR API SECRET KEY>',
   access_token: '<YOUR ACCESS TOKEN>',
-  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
-}
+  access_token_secret: '<YOUR SECRET ACCESS TOKEN>',
+})
 
 const options = {
   requestMethod: 'GET',
   endpoint: '/search/tweets.json',
   queryParams: { q: 'twitter bot' },
-  oauthOptions: credentials,
 }
 
-twitterize(options)
-  .then(data => console.log(data))
-  .catch(e => console.log(e))
+twit(options)
+  .then(console.log)
+  .catch(console.log)
 ```
 
 To [post tweets](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html):
 
 ```js
-const twitterize = require('twitterize')
+const twitterize = require('../src')
 
-const credentials = {
+const twit = twitterize({
   api_key: '<YOUR API KEY>',
   api_secret_key: '<YOUR API SECRET KEY>',
   access_token: '<YOUR ACCESS TOKEN>',
-  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
-}
+  access_token_secret: '<YOUR SECRET ACCESS TOKEN>',
+})
 
 const options = {
   requestMethod: 'POST',
   endpoint: '/statuses/update.json',
   bodyParams: { status: 'Hello World!' },
-  oauthOptions: credentials,
 }
 
-request(options)
-  .then(data => console.log(data))
-  .catch(e => console.log(e))
+twit(options)
+  .then(console.log)
+  .catch(console.log)
 ```
 
 To [upload an image](https://developer.twitter.com/en/docs/media/upload-media/api-reference/post-media-upload.html):
@@ -83,37 +82,28 @@ const fs = require('fs')
 const path = require('path')
 const twitterize = require('../src')
 
-const oauthOptions = {
-  api_key: process.env.TWITTER_API_KEY,
-  api_secret_key: process.env.TWITTER_API_SECRET_KEY,
-  access_token: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-}
+const twit = twitterize({
+  api_key: '<YOUR API KEY>',
+  api_secret_key: '<YOUR API SECRET KEY>',
+  access_token: '<YOUR ACCESS TOKEN>',
+  access_token_secret: '<YOUR SECRET ACCESS TOKEN>',
+})
 
 const imagePath = path.join(__dirname, './cat.jpg')
 const b64content = fs.readFileSync(imagePath, { encoding: 'base64' })
 
-// For simple status update
-const tweetOptions = {
-  requestMethod: 'POST',
-  endpoint: '/statuses/update.json',
-  bodyParams: {},
-  oauthOptions,
-}
-
-// for  image upload
-const uploadOptions = {
+// Image upload
+twit({
   requestMethod: 'POST',
   subdomain: 'upload',
   endpoint: '/media/upload.json',
   bodyParams: { media_data: b64content },
-  oauthOptions,
-}
-
-twitterize(uploadOptions)
+})
   .then(data =>
-    twitterize({
-      ...tweetOptions,
+    // Status update
+    twit({
+      requestMethod: 'POST',
+      endpoint: '/statuses/update.json',
       bodyParams: {
         status: 'Hello World IND SIG!',
         media_ids: JSON.parse(data).media_id_string,
