@@ -20,33 +20,23 @@ function buildBaseUrl(subdomain, endpoint) {
   return `https://${subdomain}.twitter.com/1.1${endpoint}`
 }
 
-function buildHttpsOptions({
-  url,
-  requestMethod,
-  body,
-  baseUrl,
-  queryParams,
-  bodyParams,
-  oauthOptions,
-}) {
+function buildHeaders(options) {
+  return {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Length': Buffer.byteLength(options.body),
+    Authorization: authorization(options),
+    'cache-control': 'no-cache',
+  }
+}
+
+function buildHttpsOptions(url, options) {
   return {
     protocol: url.protocol,
     host: url.host,
     hostname: url.hostname,
-    method: requestMethod,
+    method: options.requestMethod,
     path: `${url.pathname}${url.search}`,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Content-Length': Buffer.byteLength(body),
-      Authorization: authorization({
-        requestMethod,
-        baseUrl,
-        queryParams,
-        bodyParams,
-        oauthOptions,
-      }),
-      'cache-control': 'no-cache',
-    },
+    headers: buildHeaders(options),
   }
 }
 
@@ -80,8 +70,7 @@ module.exports = ({
   const baseUrl = buildBaseUrl(subdomain, endpoint)
   const body = buildBody(bodyParams)
   const url = buildUrl(baseUrl, queryParams)
-  const httpsOptions = buildHttpsOptions({
-    url,
+  const httpsOptions = buildHttpsOptions(url, {
     requestMethod,
     body,
     baseUrl,
