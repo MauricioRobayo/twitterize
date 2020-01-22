@@ -66,5 +66,10 @@
     "coveragePathIgnorePatterns": [
       "src/index.js"
     ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
