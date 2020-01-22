@@ -35,14 +35,14 @@ const uploadOptions = {
 }
 
 request(uploadOptions)
-  .then(data => {
-    const obj = JSON.parse(data)
-    tweetOptions.bodyParams = {
-      status: 'Hello World IND SIG!',
-      media_ids: obj.media_id_string,
-    }
-    request(tweetOptions)
-      .then(console.log)
-      .catch(console.log)
-  })
+  .then(data =>
+    request({
+      ...tweetOptions,
+      bodyParams: {
+        status: 'Hello World IND SIG!',
+        media_ids: JSON.parse(data).media_id_string,
+      },
+    })
+  )
+  .then(console.log)
   .catch(console.log)
