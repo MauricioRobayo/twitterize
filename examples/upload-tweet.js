@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fs = require('fs')
 const path = require('path')
-const request = require('../src')
+const twitterize = require('../src')
 
 // https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html
 
@@ -34,15 +34,15 @@ const uploadOptions = {
   oauthOptions,
 }
 
-request(uploadOptions)
+twitterize(uploadOptions)
   .then(data =>
-    request({
+    twitterize({
       ...tweetOptions,
       bodyParams: {
         status: 'Hello World IND SIG!',
         media_ids: JSON.parse(data).media_id_string,
       },
-    })
+    }),
   )
   .then(console.log)
   .catch(console.log)
