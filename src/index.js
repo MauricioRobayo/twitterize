@@ -59,13 +59,12 @@ function request(httpsOptions, body) {
   })
 }
 
-module.exports = ({
+module.exports = oauthOptions => ({
   subdomain = 'api',
   endpoint,
   requestMethod = 'GET',
   queryParams = {},
   bodyParams = {},
-  oauthOptions,
 }) => {
   const baseUrl = buildBaseUrl(subdomain, endpoint)
   const body = buildBody(bodyParams)
