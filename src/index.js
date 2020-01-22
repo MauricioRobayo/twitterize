@@ -38,13 +38,13 @@ function buildHttpsOptions({
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Content-Length': Buffer.byteLength(body),
-      Authorization: authorization(
+      Authorization: authorization({
         requestMethod,
         baseUrl,
         queryParams,
         bodyParams,
         oauthOptions,
-      ),
+      }),
       'cache-control': 'no-cache',
     },
   }
