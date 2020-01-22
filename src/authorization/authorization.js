@@ -1,13 +1,13 @@
 const { randomString, timestamp, percentEncode } = require('./helpers')
 const { signature } = require('./modules/signature')
 
-exports.authorization = (
+exports.authorization = ({
   requestMethod,
   baseUrl,
   queryParams,
   bodyParams,
-  oauthOptions
-) => {
+  oauthOptions,
+}) => {
   /*
     You should be able to see that the header contains 7 key/value pairs, where the keys all begin with the string “oauth_”. For any given Twitter API request, collecting these 7 values and creating a similar header will allow you to specify authorization for the request.
   */
@@ -30,7 +30,7 @@ exports.authorization = (
     baseUrl,
     queryParams,
     bodyParams,
-    Object.assign(oauthOptions, oauthParams)
+    Object.assign(oauthOptions, oauthParams),
   )
 
   /*
@@ -51,7 +51,7 @@ exports.authorization = (
       }`
       return str
     },
-    ''
+    '',
   )}`
   return outputString
 }
