@@ -2,21 +2,22 @@ const {
   signatureBaseString,
 } = require('../../src/authorization/modules/signatureBaseString')
 
+const requestMethod = 'post'
+const baseUrl = 'https://api.twitter.com/1.1/statuses/update.json'
+const queryParams = {
+  include_entities: true,
+}
+const bodyParams = {
+  status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
+}
+const oauthOptions = {
+  api_key: 'xvz1evFS4wEEPTGEFPHBog',
+  access_token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
+  oauth_nonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
+  oauth_timestamp: 1318622958,
+}
+
 it('should return the parameter string', () => {
-  const requestMethod = 'post'
-  const baseUrl = 'https://api.twitter.com/1.1/statuses/update.json'
-  const queryParams = {
-    include_entities: true,
-  }
-  const bodyParams = {
-    status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
-  }
-  const oauthOptions = {
-    api_key: 'xvz1evFS4wEEPTGEFPHBog',
-    access_token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
-    oauth_nonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
-    oauth_timestamp: 1318622958,
-  }
   expect(
     signatureBaseString({
       requestMethod,
