@@ -165,4 +165,4 @@ npm run example:upload
 
 ## License
 
-[MIT](LICENSE).
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMauricioRobayo%2Ftwitterize?ref=badge_large)
