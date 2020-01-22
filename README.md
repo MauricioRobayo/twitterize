@@ -81,13 +81,13 @@ To [upload an image](https://developer.twitter.com/en/docs/media/upload-media/ap
 ```js
 const fs = require('fs')
 const path = require('path')
-const request = require('../src')
+const twitterize = require('../src')
 
-const credentials = {
-  api_key: '<YOUR API KEY>',
-  api_secret_key: '<YOUR API SECRET KEY>',
-  access_token: '<YOUR ACCESS TOKEN>',
-  access_token_secret: '<YOUR ACCESS TOKEN SECRET>',
+const oauthOptions = {
+  api_key: process.env.TWITTER_API_KEY,
+  api_secret_key: process.env.TWITTER_API_SECRET_KEY,
+  access_token: process.env.TWITTER_ACCESS_TOKEN,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 }
 
 const imagePath = path.join(__dirname, './cat.jpg')
@@ -110,17 +110,17 @@ const uploadOptions = {
   oauthOptions,
 }
 
-request(uploadOptions)
-  .then(data => {
-    const obj = JSON.parse(data)
-    tweetOptions.bodyParams = {
-      status: 'Hello World IND SIG!',
-      media_ids: obj.media_id_string,
-    }
-    request(tweetOptions)
-      .then(console.log)
-      .catch(console.log)
-  })
+twitterize(uploadOptions)
+  .then(data =>
+    twitterize({
+      ...tweetOptions,
+      bodyParams: {
+        status: 'Hello World IND SIG!',
+        media_ids: JSON.parse(data).media_id_string,
+      },
+    }),
+  )
+  .then(console.log)
   .catch(console.log)
 ```
 
