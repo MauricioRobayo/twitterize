@@ -25,13 +25,13 @@ exports.authorization = ({
   /*
     Generate signature
   */
-  oauthParams.oauth_signature = signature(
+  oauthParams.oauth_signature = signature({
     requestMethod,
     baseUrl,
     queryParams,
     bodyParams,
-    Object.assign(oauthOptions, oauthParams),
-  )
+    oauthOptions: Object.assign(oauthOptions, oauthParams),
+  })
 
   /*
     1. Append the string “OAuth ” (including the space at the end) to outputString.
