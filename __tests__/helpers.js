@@ -4,11 +4,21 @@ const {
   timestamp,
 } = require('../src/authorization/helpers')
 // https://developer.twitter.com/en/docs/basics/authentication/guides/percent-encoding-parameters.html
-it('should percent encode a string according to RFC 3986, Section 2.1.', () => {
-  expect(percentEncode('Ladies + Gentlemen')).toBe('Ladies%20%2B%20Gentlemen')
-  expect(percentEncode('An encoded string!')).toBe('An%20encoded%20string%21')
-  expect(percentEncode('Dogs, Cats & Mice')).toBe('Dogs%2C%20Cats%20%26%20Mice')
-  expect(percentEncode('☃')).toBe('%E2%98%83')
+describe('should percent encode a string according to RFC 3986, Section 2.1.', () => {
+  it('should percent encode the plus sign', () => {
+    expect(percentEncode('Ladies + Gentlemen')).toBe('Ladies%20%2B%20Gentlemen')
+  })
+  it('should percent encode exclamation mark', () => {
+    expect(percentEncode('An encoded string!')).toBe('An%20encoded%20string%21')
+  })
+  it('should percent encode the comma and the ampersand symbol', () => {
+    expect(percentEncode('Dogs, Cats & Mice')).toBe(
+      'Dogs%2C%20Cats%20%26%20Mice',
+    )
+  })
+  it('should percent encode an emoji', () => {
+    expect(percentEncode('☃')).toBe('%E2%98%83')
+  })
 })
 
 it('should generate random alphanumeric string of given length', () => {
