@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ["airbnb-base", "prettier"],
+  extends: ['airbnb-base', 'prettier'],
   env: {
-    jest: true
-  }
-};
+    jest: true,
+  },
+}
