@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
-const twitterize = require('../src')
-
-const twit = twitterize({
+// https://developer.twitter.com/en/apps/
+const twitterize = require('../src')({
   api_key: process.env.TWITTER_API_KEY,
   api_secret_key: process.env.TWITTER_API_SECRET_KEY,
   access_token: process.env.TWITTER_ACCESS_TOKEN,
@@ -14,6 +13,6 @@ const options = {
   queryParams: { q: 'twitter bot' },
 }
 
-twit(options)
+twitterize(options)
   .then(console.log)
   .catch(console.log)
