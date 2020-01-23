@@ -21,11 +21,19 @@ describe('should percent encode a string according to RFC 3986, Section 2.1.', (
   })
 })
 
-it('should generate random alphanumeric string of given length', () => {
-  expect(/^[a-z0-9]{15}$/i.test(randomString(15))).toBe(true)
-  expect(/^[a-z0-9]{16}$/i.test(randomString(16))).toBe(true)
-  expect(randomString(0).length).toBe(0)
-  expect(randomString(-15).length).toBe(0)
+describe('should generate random alphanumeric string of given length', () => {
+  it('should generate random alphanumeric string of length 15', () => {
+    expect(/^[a-z0-9]{15}$/i.test(randomString(15))).toBe(true)
+  })
+  it('should generate random alphanumeric string of length 16', () => {
+    expect(/^[a-z0-9]{16}$/i.test(randomString(16))).toBe(true)
+  })
+  it('should generate random alphanumeric string of length 0', () => {
+    expect(randomString(0).length).toBe(0)
+  })
+  it('should generate random alphanumeric string of length 0', () => {
+    expect(randomString(-15).length).toBe(0)
+  })
 })
 
 it('should generate the Unix Epoch timestamp for the present moment', () => {
