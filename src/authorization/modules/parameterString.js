@@ -1,13 +1,9 @@
 const { percentEncode } = require('../helpers')
 
 function buildOutputString(sortedEncodedParams) {
-  return Object.keys(sortedEncodedParams).reduce((str, key, index, keys) => {
-    // eslint-disable-next-line no-param-reassign
-    str += `${key}=${sortedEncodedParams[key]}${
-      index < keys.length - 1 ? '&' : ''
-    }`
-    return str
-  }, '')
+  return Object.entries(sortedEncodedParams)
+    .map(([key, value]) => `${key}=${value}`)
+    .join('&')
 }
 
 function sortEncodedParams(encodedParams) {
