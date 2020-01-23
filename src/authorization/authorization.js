@@ -34,15 +34,9 @@ exports.authorization = options => {
       5. Append a double quote ‘”’ to DST.
       6. If there are key/value pairs remaining, append a comma ‘,’ and a space ‘ ‘ to DST.
   */
-  const outputString = `OAuth ${Object.keys(oauthParams).reduce(
-    (str, key, index, keys) => {
-      // eslint-disable-next-line no-param-reassign
-      str += `${percentEncode(key)}="${percentEncode(oauthParams[key])}"${
-        index < keys.length - 1 ? ', ' : ''
-      }`
-      return str
-    },
-    '',
-  )}`
+  const outputString = `OAuth ${Object.entries(oauthParams)
+    .map(([key, value]) => `${percentEncode(key)}="${percentEncode(value)}"`)
+    .join(', ')}`
+
   return outputString
 }
