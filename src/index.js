@@ -48,7 +48,7 @@ function request(httpsOptions, body) {
         data += _data
       })
       res.on('end', () => {
-        resolve(data)
+        resolve(JSON.parse(data))
       })
     })
     req.on('error', error => {

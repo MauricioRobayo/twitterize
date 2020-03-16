@@ -28,7 +28,7 @@ twitterize({
       endpoint: '/statuses/update.json',
       bodyParams: {
         status: 'Hello World IND SIG!',
-        media_ids: JSON.parse(data).media_id_string,
+        media_ids: data.media_id_string,
       },
     }),
   )
