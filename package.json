@@ -28,7 +28,7 @@
     "husky": "^4.0.2",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.3",
-    "prettier": "^1.15.3",
+    "prettier": "^2.0.0",
     "run.env": "^1.1.0"
   },
   "dependencies": {},
