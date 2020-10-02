@@ -3,7 +3,6 @@
 [![Build Status](https://github.com/MauricioRobayo/twitterize/workflows/Test%20and%20Release/badge.svg)](https://github.com/MauricioRobayo/twitterize/actions)
 [![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
 [![codebeat badge](https://codebeat.co/badges/937d95fe-2d3e-487f-a735-f90384b84566)](https://codebeat.co/projects/github-com-mauriciorobayo-twitterize-master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/MauricioRobayo/twitterize.svg)](https://greenkeeper.io/)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API.
 
@@ -47,9 +46,7 @@ const options = {
   queryParams: { q: 'twitter bot' },
 }
 
-twit(options)
-  .then(console.log)
-  .catch(console.log)
+twit(options).then(console.log).catch(console.log)
 ```
 
 To [post tweets](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update.html):
@@ -70,9 +67,7 @@ const options = {
   bodyParams: { status: 'Hello World!' },
 }
 
-twit(options)
-  .then(console.log)
-  .catch(console.log)
+twit(options).then(console.log).catch(console.log)
 ```
 
 To [upload an image](https://developer.twitter.com/en/docs/media/upload-media/api-reference/post-media-upload.html):
@@ -99,7 +94,7 @@ twit({
   endpoint: '/media/upload.json',
   bodyParams: { media_data: b64content },
 })
-  .then(data =>
+  .then((data) =>
     // Status update
     twit({
       requestMethod: 'POST',

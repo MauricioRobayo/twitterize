@@ -16,19 +16,19 @@
     "oauth",
     "authorization"
   ],
-  "author": "Mauricio Robayo <rfmajo@gmail.com> (https://www.archemiro.com)",
+  "author": "Mauricio Robayo <rfmajo@gmail.com> (https://www.mauriciorobayo.com)",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "eslint": "^6.0.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "husky": "^4.0.2",
-    "jest": "^25.1.0",
-    "lint-staged": "^10.0.3",
-    "prettier": "^2.0.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
     "run.env": "^1.1.0"
   },
   "dependencies": {},
@@ -80,12 +80,10 @@
   "lint-staged": {
     "src/**/*.js": [
       "eslint --fix",
-      "git add",
       "jest --bail --findRelatedTests"
     ],
     "**/*.{js,ts,css,less,scss,vue,json,gql,md,yml,yaml}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
