@@ -15,7 +15,7 @@ const queryParams = { include_entities: true }
 const bodyParams = {
   status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
 }
-const oauthOptions = {
+const oAuthOptions = {
   api_key: 'xvz1evFS4wEEPTGEFPHBog',
   api_secret_key: 'kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw',
   access_token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
@@ -29,7 +29,7 @@ it('should return the authorization header string', () => {
       baseUrl,
       queryParams,
       bodyParams,
-      oauthOptions,
+      oAuthOptions,
     }),
   ).toBe(
     'OAuth oauth_consumer_key="xvz1evFS4wEEPTGEFPHBog", oauth_nonce="kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg", oauth_signature="tnnArxj06cWHq44gCs1OSKk%2FjLY%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1318622958", oauth_token="370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb", oauth_version="1.0"',

@@ -22,16 +22,16 @@ function encodeParams(params) {
   }, {})
 }
 
-exports.parameterString = (queryParams, bodyParams, oauthOptions) => {
+exports.parameterString = (queryParams, bodyParams, oAuthOptions) => {
   /*
     Collecting parameters
   */
   const params = Object.assign(queryParams, bodyParams, {
-    oauth_consumer_key: oauthOptions.api_key,
-    oauth_nonce: oauthOptions.oauth_nonce,
+    oauth_consumer_key: oAuthOptions.api_key,
+    oauth_nonce: oAuthOptions.oauth_nonce,
     oauth_signature_method: 'HMAC-SHA1',
-    oauth_timestamp: oauthOptions.oauth_timestamp,
-    oauth_token: oauthOptions.access_token,
+    oauth_timestamp: oAuthOptions.oauth_timestamp,
+    oauth_token: oAuthOptions.access_token,
     oauth_version: '1.0',
   })
   /*

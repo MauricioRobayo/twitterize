@@ -42,16 +42,16 @@ function buildHttpsOptions(url, options) {
 
 function request(httpsOptions, body) {
   return new Promise((resolve, reject) => {
-    const req = https.request(httpsOptions, res => {
+    const req = https.request(httpsOptions, (res) => {
       let data = ''
-      res.on('data', _data => {
+      res.on('data', (_data) => {
         data += _data
       })
       res.on('end', () => {
         resolve(JSON.parse(data))
       })
     })
-    req.on('error', error => {
+    req.on('error', (error) => {
       reject(error)
     })
     req.write(body)
@@ -59,7 +59,7 @@ function request(httpsOptions, body) {
   })
 }
 
-module.exports = oauthOptions => ({
+module.exports = (oAuthOptions) => ({
   subdomain = 'api',
   endpoint,
   requestMethod = 'GET',
@@ -75,7 +75,7 @@ module.exports = oauthOptions => ({
     baseUrl,
     queryParams,
     bodyParams,
-    oauthOptions,
+    oAuthOptions,
   })
   return request(httpsOptions, body)
 }

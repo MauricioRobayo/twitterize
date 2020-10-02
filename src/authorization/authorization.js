@@ -1,27 +1,27 @@
 const { randomString, timestamp, percentEncode } = require('./helpers')
 const { signature } = require('./modules/signature')
 
-exports.authorization = options => {
+exports.authorization = (options) => {
   /*
     You should be able to see that the header contains 7 key/value pairs, where the keys all begin with the string “oauth_”. For any given Twitter API request, collecting these 7 values and creating a similar header will allow you to specify authorization for the request.
   */
 
-  const oauthParams = {
-    oauth_consumer_key: options.oauthOptions.api_key,
+  const oAuthParams = {
+    oauth_consumer_key: options.oAuthOptions.api_key,
     oauth_nonce: randomString(32),
     oauth_signature: '',
     oauth_signature_method: 'HMAC-SHA1',
     oauth_timestamp: timestamp(),
-    oauth_token: options.oauthOptions.access_token,
+    oauth_token: options.oAuthOptions.access_token,
     oauth_version: '1.0',
   }
 
   /*
     Generate signature
   */
-  oauthParams.oauth_signature = signature({
+  oAuthParams.oauth_signature = signature({
     ...options,
-    oauthOptions: Object.assign(options.oauthOptions, oauthParams),
+    oAuthOptions: Object.assign(options.oAuthOptions, oAuthParams),
   })
 
   /*
@@ -34,7 +34,7 @@ exports.authorization = options => {
       5. Append a double quote ‘”’ to DST.
       6. If there are key/value pairs remaining, append a comma ‘,’ and a space ‘ ‘ to DST.
   */
-  const outputString = `OAuth ${Object.entries(oauthParams)
+  const outputString = `OAuth ${Object.entries(oAuthParams)
     .map(([key, value]) => `${percentEncode(key)}="${percentEncode(value)}"`)
     .join(', ')}`
 

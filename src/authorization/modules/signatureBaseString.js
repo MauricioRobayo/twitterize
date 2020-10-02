@@ -6,7 +6,7 @@ exports.signatureBaseString = ({
   baseUrl,
   queryParams,
   bodyParams,
-  oauthOptions,
+  oAuthOptions,
 }) => {
   /*
     1. Convert the HTTP Method to uppercase and set the output string equal to this value.
@@ -15,7 +15,7 @@ exports.signatureBaseString = ({
     4. Append the ‘&’ character to the output string.
     5. Percent encode the parameter string and append it to the output string.
 */
-  const paramString = parameterString(queryParams, bodyParams, oauthOptions)
+  const paramString = parameterString(queryParams, bodyParams, oAuthOptions)
   const outputString = `${requestMethod.toUpperCase()}&${percentEncode(
     baseUrl,
   )}&${percentEncode(paramString)}`
