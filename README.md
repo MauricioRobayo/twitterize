@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/MauricioRobayo/twitterize/workflows/Test%20and%20Release/badge.svg)](https://github.com/MauricioRobayo/twitterize/actions)
 [![codecov](https://codecov.io/gh/MauricioRobayo/twitterize/branch/master/graph/badge.svg)](https://codecov.io/gh/MauricioRobayo/twitterize)
-[![codebeat badge](https://codebeat.co/badges/937d95fe-2d3e-487f-a735-f90384b84566)](https://codebeat.co/projects/github-com-mauriciorobayo-twitterize-master)
+[![CodeFactor](https://www.codefactor.io/repository/github/mauriciorobayo/twitterize/badge)](https://www.codefactor.io/repository/github/mauriciorobayo/twitterize)
 
 Simple and minimalist wrapper using the native `https` NodeJS module to send authorized requests to the Twitter API.
 
