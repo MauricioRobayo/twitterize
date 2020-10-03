@@ -3,7 +3,6 @@
 import twitterize, { OAuthOptions, RequestOptions } from '../src'
 
 interface Tweets {
-  statuses: []
   search_metadata: Record<string, string | number>
 }
 
