@@ -6,7 +6,7 @@ const queryParams = { include_entities: true }
 const bodyParams = {
   status: 'Hello Ladies + Gentlemen, a signed OAuth request!',
 }
-const oauthOptions = {
+const oAuthOptions = {
   api_key: 'xvz1evFS4wEEPTGEFPHBog',
   access_token: '370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb',
   oauth_nonce: 'kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg',
@@ -22,7 +22,7 @@ it('should return the signature', () => {
       baseUrl,
       queryParams,
       bodyParams,
-      oauthOptions,
+      oAuthOptions,
     }),
   ).toBe('hCtSmYh+iHYCEqBWrE7C7hYmtUk=')
 })

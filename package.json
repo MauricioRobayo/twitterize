@@ -2,11 +2,13 @@
   "name": "twitterize",
   "version": "0.0.0-development",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "lint": "eslint src",
     "format": "prettier --write src/**/*.{js,ts,css,less,scss,vue,json,gql,md,yml,yaml}",
     "test": "jest --coverage",
     "example:search": "run.env node examples/search-tweets.js",
+    "example:search-ts": "run.env npx ts-node examples/search-tweets.ts",
     "example:post": "run.env node examples/post-tweet.js",
     "example:upload": "run.env node examples/upload-tweet.js"
   },
@@ -29,7 +31,8 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
-    "run.env": "^1.1.0"
+    "run.env": "^1.1.0",
+    "typescript": "^4.0.3"
   },
   "dependencies": {},
   "description": "Send authorized requests to the Twitter API.",
