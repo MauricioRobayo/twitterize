@@ -2,6 +2,7 @@
   "name": "twitterize",
   "version": "0.0.0-development",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "lint": "eslint src",
     "format": "prettier --write src/**/*.{js,ts,css,less,scss,vue,json,gql,md,yml,yaml}",
