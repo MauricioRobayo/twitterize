@@ -143,6 +143,10 @@ npm run example:post
 npm run example:upload
 ```
 
+## TypeScript
+
+Type definitions are included. A TypeScript example is provided [here](./examples/search-tweets.ts), you can run it with `npm run example:search-ts`.
+
 ## Twittter documentation
 
 - [Authentication](https://developer.twitter.com/en/docs/basics/authentication/overview/oauth)
