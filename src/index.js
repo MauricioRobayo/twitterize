@@ -51,9 +51,7 @@ function request(httpsOptions, body) {
         resolve(JSON.parse(data))
       })
     })
-    req.on('error', (error) => {
-      reject(error)
-    })
+    req.on('error', reject)
     req.write(body)
     req.end()
   })
