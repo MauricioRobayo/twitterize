@@ -48,12 +48,14 @@ function request(httpsOptions, body) {
         data += _data
       })
       res.on('end', () => {
-        resolve(JSON.parse(data))
+        try {
+          resolve(JSON.parse(data))
+        } catch (e) {
+          reject(e)
+        }
       })
     })
-    req.on('error', (error) => {
-      reject(error)
-    })
+    req.on('error', reject)
     req.write(body)
     req.end()
   })
