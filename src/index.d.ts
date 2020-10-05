@@ -9,8 +9,8 @@ export type RequestOptions = {
   subdomain?: string
   endpoint: string
   requestMethod?: 'GET' | 'POST' | 'PUT' | 'DELETE'
-  queryParams?: Record<string, string>
-  bodyParams?: Record<string, string>
+  queryParams?: Record<string, string | number | boolean>
+  bodyParams?: Record<string, string | number | boolean>
 }
 
 export default function (
