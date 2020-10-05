@@ -13,6 +13,7 @@ export type RequestOptions = {
   bodyParams?: Record<string, string | number | boolean>
 }
 
+// https://stackoverflow.com/a/57859435/2002514
 type AsJson<T> = T extends string | number | boolean | null
   ? T
   : T extends Function
