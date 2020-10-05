@@ -8,7 +8,7 @@ export type OAuthOptions = {
 export type RequestOptions = {
   subdomain?: string
   endpoint: string
-  requestMethod?: string
+  requestMethod?: 'GET' | 'POST' | 'PUT' | 'DELETE'
   queryParams?: Record<string, string>
   bodyParams?: Record<string, string>
 }
