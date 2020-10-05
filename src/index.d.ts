@@ -13,6 +13,14 @@ export type RequestOptions = {
   bodyParams?: Record<string, string | number | boolean>
 }
 
+type AsJson<T> = T extends string | number | boolean | null
+  ? T
+  : T extends Function
+  ? never
+  : T extends object
+  ? { [K in keyof T]: AsJson<T[K]> }
+  : never
+
 export default function (
   oAuthOptions: OAuthOptions,
-): <T>(requestOptions: RequestOptions) => Promise<T>
+): <T>(requestOptions: RequestOptions) => Promise<T & AsJson<T>>
