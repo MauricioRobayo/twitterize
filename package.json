@@ -88,5 +88,8 @@
     "**/*.{js,ts,css,less,scss,vue,json,gql,md,yml,yaml}": [
       "prettier --write"
     ]
+  },
+  "release": {
+    "branches": ["main"]
   }
 }
