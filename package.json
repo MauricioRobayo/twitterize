@@ -10,7 +10,9 @@
     "example:search": "run.env node examples/search-tweets.js",
     "example:search-ts": "run.env npx ts-node examples/search-tweets.ts",
     "example:post": "run.env node examples/post-tweet.js",
-    "example:upload": "run.env node examples/upload-tweet.js"
+    "example:upload": "run.env node examples/upload-tweet.js",
+    "postinstall": "git config core.hooksPath .githooks || true",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "keywords": [
     "twitter",
@@ -27,14 +29,12 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",
-    "husky": "^4.3.0",
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "run.env": "^1.1.0",
     "typescript": "^4.0.3"
   },
-  "dependencies": {},
   "description": "Send authorized requests to the Twitter API.",
   "repository": {
     "type": "git",
@@ -90,6 +90,8 @@
     ]
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   }
 }
