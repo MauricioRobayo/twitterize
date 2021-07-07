@@ -1,5 +1,3 @@
-**This package has been deprecated in favor of [twitter-v1-oauth](https://github.com/MauricioRobayo/twitter-v1-oauth)**
-
 # Twitterize 🔑
 
 [![npm version](https://badge.fury.io/js/twitterize.svg)](https://www.npmjs.com/package/twitterize)
